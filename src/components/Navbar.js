@@ -14,6 +14,7 @@ const Navbar = () => {
     await connectWallet();
     const activeAccount = await getAccount();
     setAccount(activeAccount);
+    window.location.reload(false);
   };
 
   return (
