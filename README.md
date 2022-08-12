@@ -2,7 +2,10 @@
 
 
 
-## Running instructions
+## Build Setup
+# install dependencies
+npm install
+
 
 
 ### `npm start`
