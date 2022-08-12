@@ -12,6 +12,7 @@ npm start
 
 - SmartPy/Taquito.js (for writing/connecting the Blockchain contract)
 - React (front-end)
+- axios (fetching storage data from api)
 
 
 
