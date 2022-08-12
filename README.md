@@ -5,6 +5,8 @@
 ## Build Setup
 ### Install dependencies
 npm install
+### Run App
+npm start
 
 
 
