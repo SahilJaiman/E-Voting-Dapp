@@ -86,7 +86,7 @@ const App = () => {
           <div style={{ width: "450px", height: "200px", flexDirection: "column-reverse" }} className="d-flex flex-column overflow-auto border border-2" >
             {voters.map((voter, index) => (
               <div key={index}>
-                <b>Voter {index + 1}:</b> {voter}
+                {voter}
               </div>
             ))}
           </div>
