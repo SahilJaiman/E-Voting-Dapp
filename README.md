@@ -8,5 +8,11 @@ npm install
 ### Run App
 npm start
 
+## Tech Stack
+
+- SmartPy/Taquito.js (for writing/connecting the Blockchain contract)
+- React (front-end)
+
+
 
 
