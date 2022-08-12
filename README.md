@@ -4,7 +4,7 @@
 
 ## Build Setup
 ### Install dependencies
-'npm install'
+### 'npm install'
 
 
 
