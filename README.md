@@ -14,6 +14,10 @@ npm start
 - React (front-end)
 - Axios (for fetching storage data from api)
 
+## Smart Contract
+- 
+
+
 
 
 
