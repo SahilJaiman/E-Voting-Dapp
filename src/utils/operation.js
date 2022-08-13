@@ -23,3 +23,13 @@ export const voteCandidateBOperation = async () => {
         throw err;
     }
 };
+
+export const resetOperation = async () => {
+    try {
+        const contractInstance = await tezos.wallet.at(contractAddress);
+        const op = await contractInstance.methods.reset_voting().send();
+        await op.confirmation(1);
+    } catch (err) {
+        throw err;
+    }
+};

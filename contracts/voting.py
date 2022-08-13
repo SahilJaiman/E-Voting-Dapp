@@ -5,13 +5,22 @@ class Voting(sp.Contract):
         #Storage
         self.init(
             voters = sp.map(l = {}, tkey = sp.TAddress , tvalue = sp.TBool ),
-            candidateA_votes=sp.nat(0),
-            candidateB_votes=sp.nat(0),
+            candidateA_votes = sp.nat(0),
+            candidateB_votes = sp.nat(0),
             total_votes = sp.nat(0),
             admin = sp.address("tz1TNpJWCEWEhkaX8zUrZ1WJx5q4z4jwL9yp")
+          
             )
+
     def _onlyAdmin(self):
-        sp.verify(sp.sender == self.data.admin,self.error.adminOnly())
+        sp.verify(sp.sender == self.data.admin,"Not Authorized")
+    
+    def _reset_data(self):
+        self.data.voters = {}
+        self.data.candidateA_votes = sp.nat(0)
+        self.data.candidateB_votes = sp.nat(0)
+        self.data.total_votes = sp.nat(0)
+
 
     @sp.entry_point
     def vote_for_candidate_A(self):  
@@ -36,11 +45,18 @@ class Voting(sp.Contract):
         self.data.voters[sp.sender] = sp.bool(True)
         self.data.candidateB_votes = self.data.candidateB_votes + 1
         self.data.total_votes = self.data.total_votes + 1
+    
 
 
-       
+    @sp.entry_point
+    def reset_voting(self):  
 
-
+        #Assertions
+        self._onlyAdmin()
+        
+        #Reset Data
+        self._reset_data()
+        
 @sp.add_test(name="main")
 def test():
 
@@ -70,7 +86,13 @@ def test():
     scenario +=  voting.vote_for_candidate_B().run(sender = yash)
 
     #Duplicate voting test
-    scenario +=  voting.vote_for_candidate_B().run(sender = archit)
+
+    #Reset Voting
+    scenario +=  voting.reset_voting().run(sender = sp.address("tz1TNpJWCEWEhkaX8zUrZ1WJx5q4z4jwL9yp"))
+
+
+
+
     
 
 
