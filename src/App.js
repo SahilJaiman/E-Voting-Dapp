@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import { resetOperation, voteCandidateAOperation, voteCandidateBOperation } from "./utils/operation"
 import { fetchStorage } from "./utils/tzkt";
 import Spinner from 'react-bootstrap/Spinner';
+import { PulseLoader } from "react-spinners";
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
@@ -102,12 +103,10 @@ const App = () => {
             ))}
           </div>
           <small className="d-inline-flex mt-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2">Total Votes: {total_votes} </small>
-          <Button onClick={onReset} size="sm" style={{ width: "160px" }} className="d-block mt-2" variant="warning">
-            {reset === true ? <span> <Spinner as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true" /></span> : "Reset Election"}
+          <Button disabled={loadingB | loadingA | reset} onClick={onReset} size="sm" style={{ width: "160px"}} className="d-block mt-2" variant="warning">
+            {reset === true ? <span>
+              <PulseLoader size={8} ></PulseLoader>
+            </span> : "Reset Election"}
 
           </Button>{' '}
 
