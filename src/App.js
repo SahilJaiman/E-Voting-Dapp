@@ -103,7 +103,7 @@ const App = () => {
             ))}
           </div>
           <small className="d-inline-flex mt-3 px-2 py-1 fw-semibold text-success bg-success bg-opacity-10 border border-success border-opacity-10 rounded-2">Total Votes: {total_votes} </small>
-          <Button disabled={loadingB | loadingA | reset} onClick={onReset} size="sm" style={{ width: "160px"}} className="d-block mt-2" variant="warning">
+          <Button disabled={loadingB | loadingA | reset} onClick={onReset} size="sm" style={{ width: "160px" }} className="d-block mt-2" variant="warning">
             {reset === true ? <span>
               <PulseLoader size={8} ></PulseLoader>
             </span> : "Reset Election"}
@@ -117,7 +117,9 @@ const App = () => {
             <Card.Body>
               <Card.Title>Narendra Modi </Card.Title>
               <Card.Text>
+                <small className="d-inline-flex px-2 py-1 fw-semibold text-dark bg-info bg-opacity-10 border border-info border-opacity-10 rounded-2">
                 Vote Count: {candidateA_votes}
+                </small>
               </Card.Text>
               <Button style={{ width: "80px" }} disabled={loadingB | loadingA | reset} onClick={onVoteCandidateA} variant="primary" >
                 {loadingA === true ? <span> <Spinner as="span"
@@ -133,7 +135,9 @@ const App = () => {
             <Card.Body>
               <Card.Title>Rahul Gandhi </Card.Title>
               <Card.Text>
+              <small className="d-inline-flex px-2 py-1 fw-semibold text-dark bg-info bg-opacity-10 border border-info border-opacity-10 rounded-2">
                 Vote Count: {candidateB_votes}
+                </small>
               </Card.Text>
               <Button style={{ width: "80px" }} disabled={loadingB | loadingA | reset} onClick={onVoteCandidateB} variant="primary">
                 {loadingB === true ? <span> <Spinner as="span"
