@@ -18,8 +18,6 @@ const App = () => {
   const [total_votes, setTotalVotes] = useState(0);
   const [user_status, setStatus] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [active_account, setAccount] = useState("");
-
 
   useEffect(() => {
 
@@ -31,7 +29,6 @@ const App = () => {
       setCandidateBVotes(storage.candidateB_votes);
       setTotalVotes(storage.total_votes);
       const activeAccount = await getAccount();
-      setAccount(activeAccount);
       setStatus(Object.keys(storage.voters).includes(activeAccount));
     })();
   }, []);
