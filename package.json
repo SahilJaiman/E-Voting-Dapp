@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.10",
     "@taquito/beacon-wallet": "^12.1.1",
     "@taquito/taquito": "^12.1.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -11,11 +12,13 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
+    "mdb-react-ui-kit": "^4.1.0",
     "react": "^18.1.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.1.0",
     "react-scripts": "^4.0.3",
     "react-spinners": "^0.13.4",
+    "use-dark-mode": "^2.3.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
