@@ -9,10 +9,6 @@ import { Flex } from '../styles/flex';
 import { getAccount } from "../../utils/wallet";
 import { CandidateCard } from '../card/card';
 
-import Spinner from 'react-bootstrap/Spinner';
-import { PulseLoader } from "react-spinners";
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
 
 
 export default function Mainsection() {
